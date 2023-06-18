@@ -1,0 +1,32 @@
+POST http://localhost:1220/api/order
+Content-Type: application/json
+
+{
+  "id": "",
+  "customerId": "200",
+  "address": "Dhaka, bangladesh.",
+  "orderId": "",
+  "orderLineItemsDtoList": [
+    {
+      "price": 25.00,
+      "quantity": 3
+    },
+    {
+      "price": 55.00,
+      "quantity": 8
+    },
+    {
+      "price": 120.00,
+      "quantity": 2
+    }
+  ]
+}
+
+###
+POST http://localhost:1220/api/category/search
+Content-Type: application/json
+
+{
+  "page": 0,
+  "size": 10
+}

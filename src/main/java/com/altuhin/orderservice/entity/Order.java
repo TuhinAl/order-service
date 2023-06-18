@@ -10,6 +10,7 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,7 +22,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "order")
+@Table(name = "ecommerce_order")
 @Setter
 @Getter
 @NoArgsConstructor
@@ -35,8 +36,8 @@ public class Order {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
     
-    @Column(name = "order_id")
-    private String orderId;
+    @Column(name = "order_nc_id")
+    private String orderNcId;
     
     @Column(name = "customer_id")
     private String customerId;
@@ -57,7 +58,10 @@ public class Order {
     @Column(name = "city")
     private String city;
     
+    @Column(name = "order_id", insertable = false, updatable = false)
+    private String orderId;
+    
     @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
-    private List<OrderLineItems> orderLineItems;
+    private List<OrderLineItems> orderLineItemsList;
     
 }

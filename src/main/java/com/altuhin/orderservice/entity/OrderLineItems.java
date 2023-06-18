@@ -11,6 +11,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -33,18 +34,16 @@ public class OrderLineItems {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
     
-    @Column(name = "order_id")
-    private String orderId;
-    
     @Column(name = "price")
     private BigDecimal price;
     
     @Column(name = "quantity")
     private Integer quantity;
     
-    @JoinColumn(name = "order_id")
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id", nullable = false)
     private Order order;
     
-    
+    @Column(name = "order_id", insertable = false, updatable = false)
+    private String orderId;
 }
