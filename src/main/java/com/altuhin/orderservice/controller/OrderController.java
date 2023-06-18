@@ -2,7 +2,7 @@ package com.altuhin.orderservice.controller;
 
 
 import com.altuhin.orderservice.dto.OrderDto;
-import com.altuhin.orderservice.repository.repository.OrderLineItemsRepository;
+import com.altuhin.orderservice.repository.OrderLineItemsRepository;
 import com.altuhin.orderservice.service.OrderService;
 import com.altuhin.orderservice.unit.ApiResponse;
 import com.altuhin.orderservice.unit.ApiResponseEntityFactory;

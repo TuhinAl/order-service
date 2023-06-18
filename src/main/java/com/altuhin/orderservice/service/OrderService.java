@@ -4,7 +4,7 @@ import com.altuhin.orderservice.dto.OrderDto;
 import com.altuhin.orderservice.entity.Order;
 import com.altuhin.orderservice.entity.OrderLineItems;
 import com.altuhin.orderservice.repository.OrderRepository;
-import com.altuhin.orderservice.repository.repository.OrderLineItemsRepository;
+import com.altuhin.orderservice.repository.OrderLineItemsRepository;
 import com.altuhin.orderservice.unit.OrderNumberGeneratorService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

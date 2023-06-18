@@ -1,4 +1,4 @@
-package com.altuhin.orderservice.repository.repository;
+package com.altuhin.orderservice.repository;
 
 import com.altuhin.orderservice.entity.OrderLineItems;
 import org.springframework.data.jpa.repository.JpaRepository;
